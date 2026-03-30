@@ -4,6 +4,7 @@ const controllers =  require("../controllers/homeController")
 
 
 router.get("/", controllers.getAll);
+router.get("/categories", controllers.getAllCategories);
 
 router.get("/addCategory", (req, res) => {
   res.send("addCategory");

@@ -21,7 +21,22 @@
    
 } 
 
+ async function getAllCategories(req, res) {
+   
+    const categories = [
+      { id: 1, name: "Frontend" },
+      { id: 2, name: "Backend" },
+      { id: 3, name: "DevOps" }
+    ];
+    
+    res.render("categories", { categories: categories});
+   
+} 
+
+
+
 module.exports = {
-  getAll
+  getAll,
+  getAllCategories
    
 };
