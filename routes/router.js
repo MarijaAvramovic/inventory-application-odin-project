@@ -10,6 +10,8 @@ router.get("/addCategory", (req, res) => {
   res.send("addCategory");
 });
 
+router.get("/tools", controllers.getAllTools);
+
 router.get("/addTool", (req, res) => {
   res.send("addTool");
 });

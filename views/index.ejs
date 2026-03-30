@@ -11,25 +11,17 @@
     <h1 style="text-align:center; margin-bottom:40px;">The Odin Project Inventory App</h1>
     
    <div style="text-align:center">   <h2>Categories</h2></div>
-    <div class="flex-container">
+    <div class="grid-container">
    
-      <% categories.forEach(category => { %>
-        <div class="flex-item">
-          <h2><%= category.name %></h2>
-          <p>hello</p>
-        </div>
-      <% }) %>    
+       <%- include('partials/categories', { categories: categories }) %> 
+
     </div>
     
  
     <div style="text-align:center">   <h2>Tools</h2></div>
     <div class="grid-container">
-      <% tools.forEach(tool => { %>
-        <div class="grid-item">
-          <h3><%= tool.name %></h3>
-          <p><%= tool.description %></p>
-        </div>
-      <% }) %>
+      <%- include('partials/tools', { tools: tools }) %>
+      
     </div>
   </main>
 
