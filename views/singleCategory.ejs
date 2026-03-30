@@ -8,16 +8,19 @@
  <%- include('nav') %>
 
   <main>
-   
     
- 
-    <div style="text-align:center">   <h2>Tools All</h2></div>
-    <div class="grid-container">
 
-       <%- include('partials/tools', { tools: tools }) %> 
+    <div class="centered-card">
+  <div class="card-content">
+   <h1><%= category.name %></h1>
+   
+     <p>hello</p>
+              <a href="/categories/<%= category.id %>">View</a>
+  </div>
+</div>
 
      
-    </div>
+     
   </main>
 
 

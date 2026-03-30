@@ -1,16 +1,25 @@
 const express = require("express");
 const router = express.Router();
-const controllers =  require("../controllers/homeController")
+const controllers =  require("../controllers/homeController");
+const categoryController = require("../controllers/categoryController");
+const toolController = require("../controllers/toolController");
 
 
 router.get("/", controllers.getAll);
 router.get("/categories", controllers.getAllCategories);
+router.get("/categories/:id", categoryController.getCategory);
+
+ 
+
+router.get("/tools", controllers.getAllTools);
+router.get("/tools/:id", toolController.getTool);
+
 
 router.get("/addCategory", (req, res) => {
   res.send("addCategory");
 });
 
-router.get("/tools", controllers.getAllTools);
+ 
 
 router.get("/addTool", (req, res) => {
   res.send("addTool");

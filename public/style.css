@@ -2,7 +2,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #8b5757;
+      background: #6280b4;
       color: #ddd;
     }
     
@@ -23,27 +23,7 @@
       margin: 40px auto;
       padding: 0 20px;
     }
-    
-    /* First div - Flex with 3 items */
-    .flex-container {
-      display: flex;
-      gap: 20px;
-      margin-bottom: 60px;
-      flex-wrap: wrap;
-    }
-    
-    .flex-item {
-      flex: 1;
-      min-width: 300px;
-      background: #1f1f1f;
-      padding: 30px;
-      border-radius: 8px;
-      text-align: center;
-      border: 1px solid #333;
-      
-    }
-    
-    /* Second div - Grid with 8 items */
+     
     .grid-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -51,11 +31,27 @@
     }
     
     .grid-item {
-      background: #1f1f1f;
+      
       padding: 25px;
       border-radius: 8px;
       text-align: center;
       border: 1px solid #333;
+    }
+    .grid-item a {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #555;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    .category {
+      background: #333;
+    }
+    .tool {
+      background: #444;
     }
     
     footer {
@@ -64,3 +60,51 @@
       text-align: center;
       margin-top: 80px;
     }
+
+    .centered-card {
+ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    transition: all 0.6s ease;
+  }
+  .card-content  a {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #555;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+  .card-content {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 50px 40px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-content:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .card-content h1, .card-content h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+  }
+
+  .card-content p {
+    color: #ddd;
+    line-height: 1.6;
+  }

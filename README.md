@@ -3,7 +3,7 @@
 #  odin-steps
 For this project we are going to create an Inventory management app for an imaginary store. It's a managing app for web dev.
 
-My Inventory app have categories(front,back & full) and items(tools).When the user goes to the home-page they can choose a category to view, and then get a list of every item in that category. The app includes all of the CRUD methods for both tools and categories, so anybody that’s visiting the site can Create, Read, Update or Delete any tool or Category.
+The Inventory app has categories(front,back & full) and items(tools).When the user goes to the home-page they can choose a category to view, and then get a list of every item in that category. The app includes all of the CRUD methods for both tools and categories, so anybody that’s visiting the site can Create, Read, Update or Delete any tool or Category.
 
 Steps:
 
