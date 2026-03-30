@@ -1,10 +1,9 @@
 const express = require("express");
 const router = express.Router();
+const controllers =  require("../controllers/homeController")
 
 
-router.get("/", (req, res) => {
-  res.render('index');
-});
+router.get("/", controllers.getAll);
 
 router.get("/addCategory", (req, res) => {
   res.send("addCategory");
