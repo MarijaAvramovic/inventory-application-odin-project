@@ -15,29 +15,39 @@ async function getAll() {
   return { categories: categoriesResult.rows, tools: results.rows };
 }
 
-async function addNewMessage(user, text) {
-    await pool.query(
-    "INSERT INTO messages (username, text) VALUES ($1, $2) RETURNING *",
-    [user, text]
-  );
- 
+async function getAllCategories() {
+    const query = "SELECT * FROM categories ORDER BY name";
+    const results = await pool.query(query);
+    return results.rows;
 }
 
-
-async function getMessageById(id) {
-  const result = await pool.query("SELECT * FROM messages WHERE id = $1", [id]);
-  return result.rows[0];
+async function getAllTools() {
+    const query = `SELECT 
+            t.*,
+            c.name AS category_name
+        FROM tools t
+        LEFT JOIN categories c ON t.category_id = c.id
+        ORDER BY t.name;`;
+    const results = await pool.query(query);
+    return results.rows;
 }
 
-
-async function deleteMessageById(id) {
-  await pool.query("DELETE FROM messages WHERE id = $1", [id]);
+async function getToolById(id) {
+    const query = `SELECT 
+            t.*,
+            c.name AS category_name
+        FROM tools t
+        LEFT JOIN categories c ON t.category_id = c.id
+        WHERE t.id = $1;`;
+    const results = await pool.query(query, [id]);
+    return results.rows[0];
 }
-
 
 module.exports = {
   getAll,
-  addNewMessage,
-  getMessageById,
-  deleteMessageById
+  getAllCategories,
+  getAllTools,
+  getToolById
 };
+ 
+ 
