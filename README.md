@@ -1,5 +1,9 @@
 # inventory-application-odin-project
 
+Live Demo: https://inventory-application-odin-project.onrender.com/
+
+
+
 #  odin-steps
 For this project we are going to create an Inventory management app for an imaginary store. It's a managing app for web dev.
 
@@ -22,8 +26,9 @@ The delete functionality for item is easy. For categories only available if no t
 
 Add dummy data via a script to your local database. Do this again when you deploy.*****
 Deploy it and show off what you’ve done! ****
+
+
  
-We will learn about creating users with secure passwords in a later lesson, but for now we don’t want just anyone to be able to delete and edit items in our inventory! Figure out how to protect destructive actions (like deleting and updating) by making users enter a secret admin password to confirm the action.******
 
 # my notes
 
