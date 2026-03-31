@@ -24,8 +24,8 @@ Create all of the ‘READ’ views (i.e. view category, and view item).
 Create all the forms and build out the controllers you need for the create and update actions.
 The delete functionality for item is easy. For categories only available if no tools assigned.  
 
-Add dummy data via a script to your local database. Do this again when you deploy.*****
-Deploy it and show off what you’ve done! ****
+Add dummy data via a script to your local database. Do this again when you deploy. 
+Deploy it.
 
 
  
