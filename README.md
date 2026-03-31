@@ -11,18 +11,18 @@ Set up an Express project and a new PostgreSQL database.
 All of the database tables and its fields: 
 tables: categories and tools
 Categories: id, name;
-Tools: categoryid, idtools, name, link.
+Tools: category_id, id_tools, name, link.
 
 
-Set up the routes and controllers you’re going to need.
+Set up the routes and controllers.
+
 Create all of the ‘READ’ views (i.e. view category, and view item).
 Create all the forms and build out the controllers you need for the create and update actions.
-Figure out the delete functionality. What happens if you try to delete a category with items in it? Should it delete all the items as well? Should it just remove the category from the items? Or something else? This specific behavior will depend on your app’s requirements.
-Once you’re confident with your project, add dummy data via a script to your local database. Do this again when you deploy.
-Deploy it and show off what you’ve done!
-Extra credit
-Make it pretty!
-We will learn about creating users with secure passwords in a later lesson, but for now we don’t want just anyone to be able to delete and edit items in our inventory! Figure out how to protect destructive actions (like deleting and updating) by making users enter a secret admin password to confirm the action.
+Figure out the delete functionality. What happens if you try to delete a category with items in it? Should it delete all the items as well? Should it just remove the category from the items? Or something else? This specific behavior will depend on your app’s requirements. *** deleet catego
+Add dummy data via a script to your local database. Do this again when you deploy.*****
+Deploy it and show off what you’ve done! ****
+ 
+We will learn about creating users with secure passwords in a later lesson, but for now we don’t want just anyone to be able to delete and edit items in our inventory! Figure out how to protect destructive actions (like deleting and updating) by making users enter a secret admin password to confirm the action.******
 
 # my notes
 

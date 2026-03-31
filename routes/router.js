@@ -18,31 +18,10 @@ router.post("/tools/new", toolController.createToolPost);
 router.get("/tools/:id", toolController.getTool);
  
 
+ router.get("/tools/update/:id", toolController.showUpdateToolForm);
  
  
  
-
-router.get("/editCategory/:id", (req, res) => {
-  const categoryId = req.params.id;
-  res.send(`Edit category with ID: ${categoryId}`);
-});
-
-router.get("/editTool/:id", (req, res) => {
-  const toolId = req.params.id;
-  res.send(`Edit tool with ID: ${toolId}`);
-});
-
-router.post("/editCategory/:id", (req, res) => {
-  const categoryId = req.params.id;
-  const { name } = req.body;
-  res.send(`Category with ID: ${categoryId} updated to ${name}`);
-});
-
-router.post("/editTool/:id", (req, res) => {
-  const toolId = req.params.id;
-  const { name, category } = req.body;
-  res.send(`Tool with ID: ${toolId} updated to ${name} in category ${category}`);
-});
 
 router.get("/categories/delete/:id", categoryController.deleteCategory);
  

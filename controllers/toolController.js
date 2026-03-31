@@ -71,10 +71,21 @@ async function deleteTool(req, res) {
     await db.deleteTool(toolId);
     res.redirect("/tools");
 }
+
+
+async function showUpdateToolForm(req, res) {
+    const toolId = req.params.id;
+    const tool = await db.getTool(toolId);
+    const categories = await dbCategory.getAllCategories();
+    res.render("updateTool", { tool: tool, categories: categories, errors: [] });
+}
+
+
 module.exports = {
 
   getTool,
   deleteTool,
   showAddToolForm,
-    createToolPost
+    createToolPost,
+    showUpdateToolForm
 };
