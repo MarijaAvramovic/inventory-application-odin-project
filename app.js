@@ -6,6 +6,7 @@ const router = require("./routes/router");
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 const assetsPath = path.join(__dirname, "public");
+const { body, validationResult } = require("express-validator");
 
 app.use(express.static(assetsPath));
 

@@ -8,6 +8,7 @@ const toolController = require("../controllers/toolController");
 router.get("/", controllers.getAll);
 router.get("/categories", controllers.getAllCategories);
 router.get("/categories/new", categoryController.showAddCategoryForm);
+router.post("/categories/new", categoryController.createCategoryPost);
 router.get("/categories/:id", categoryController.getCategory);
  
 

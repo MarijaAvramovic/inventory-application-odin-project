@@ -2,7 +2,19 @@
 
 const db = require("../db/categoryQueries");
 const toolDb = require("../db/toolQueries");
+const errs = require("../errors/errorMsgAll");
 
+const { body, validationResult, matchedData } = require("express-validator");
+
+
+const validateCategory = [
+  body("name")
+    .trim()
+    .isLength({ min: 1, max: 20 })
+    .withMessage(errs.lengthErr)
+    .matches(/^[a-zA-Z\s]+$/)
+    .withMessage(errs.alphaErr),
+];
 
   
  async function getCategory(req, res) {
@@ -20,8 +32,29 @@ const toolDb = require("../db/toolQueries");
 } 
 
 function showAddCategoryForm(req, res) {
-    res.render("addCategory");
+    res.render("addCategory", { errors: [] });
 }
+
+const createCategoryPost = [
+  validateCategory,
+  async (req, res) => {
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+      return res.status(400).render("addCategory", {
+        errors: errors.array(),
+      });
+    }
+
+    const data = matchedData(req);
+
+    await db.createCategory({
+      name: data.name,
+    });
+
+    res.redirect("/categories");
+  },
+];
 
 
 async function deleteCategory(req, res) {
@@ -35,7 +68,9 @@ module.exports = {
 
   getCategory,
   deleteCategory,
-    showAddCategoryForm
+    showAddCategoryForm,
+    createCategoryPost
+
 };
    
  

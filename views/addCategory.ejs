@@ -10,7 +10,14 @@
   <main>
  <div class="tool-form-card">
    <h1>Add New Category</h1>
-    <form action="/categories" method="POST">
+   <% if (errors && errors.length > 0) { %>
+  <ul class="error">
+    <% errors.forEach(error => { %>
+      <li><%= error.msg %></li>
+    <% }) %>
+  </ul>
+<% } %>
+    <form action="/categories/new" method="POST">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required>
       <button type="submit">Add Category</button>

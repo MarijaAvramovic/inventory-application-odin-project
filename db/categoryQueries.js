@@ -13,7 +13,13 @@ async function deleteCategory(id) {
     await pool.query(query, [id]);
 }
 
+async function createCategory(data) {
+    const query = "INSERT INTO categories (name) VALUES ($1)";
+    await pool.query(query, [data.name]);
+}
+
 module.exports = {
     getCategory,
-    deleteCategory
+    deleteCategory,
+    createCategory
 };

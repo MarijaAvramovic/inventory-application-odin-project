@@ -190,3 +190,9 @@ gap: 1rem;
 .tool-form-card button:hover {
   background: #5a67d8;
 }
+
+.tool-form-card .error {
+  color: #e53e3e;
+  margin-top: 5px;
+  font-size: 13px;
+}
