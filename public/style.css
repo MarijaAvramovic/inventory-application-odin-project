@@ -1,9 +1,12 @@
  
+    
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background-image: linear-gradient(to right, #9a9df2, #2c67f2);
       color: #ddd;
+      
+
     }
     
     nav {
@@ -24,15 +27,34 @@
     }
     
     main {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 0 20px;
+  display: flex; 
+  flex-direction:column; 
+  align-items: center;
+  justify-content: center;
+      max-width: 700px;
+      margin: 1rem auto;
+      min-height: 80vh;
+     
     }
+
+    @media (max-width: 400px) {
+  main {
+   
+    min-height: 80vh;     
+  }
+  .centered-card {
+    padding: 15px;
+  }
+
+  
+}
      
     .grid-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
+      min-height: 300px;
+      width: 100%; max-width: 1200px;
     }
     
     .grid-item {
@@ -53,7 +75,12 @@
     }
 
     .category {
-      background: #333;
+     background: linear-gradient(135deg, 
+    rgba(51, 51, 51, 0.75),   /* dark gray with transparency */
+    rgba(20, 20, 20, 0.85)    /* darker at the bottom */
+  );
+  backdrop-filter: blur(8px);   /* makes it look nicer and more modern */
+  border: 1px solid rgba(255, 255, 255, 0.15);
     }
     .category button {
       margin-top: 15px;
@@ -63,15 +90,23 @@
       text-decoration: none;
       border-radius: 4px;
     }
+
+  
     .tool {
-      background: #444;
+      background: linear-gradient(135deg, 
+    rgba(68, 68, 68, 0.75),   /* semi-transparent dark gray */
+    rgba(35, 35, 35, 0.85)    /* darker at the bottom */
+  );
+  backdrop-filter: blur(8px);   /* makes it look glassier */
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     }
     
     footer {
       background: #222;
-      padding: 40px 20px;
+      padding: 20px 10px;
       text-align: center;
-      margin-top: 80px;
+    
     }
   footer a {
       color: #fff;
@@ -88,6 +123,7 @@
     justify-content: center;
     padding: 20px;
     transition: all 0.6s ease;
+   
   }
   .card-content  a {
       display: inline-block;
@@ -151,7 +187,8 @@ gap: 1rem;
   background: #fff;
   padding: 30px 40px;
   border-radius: 12px;
-  width: 350px;
+  max-width: 350px;
+  width: 100%;
   margin: 0 auto; /* center inside your main */
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
@@ -169,7 +206,7 @@ gap: 1rem;
 
 .tool-form-card label {
   margin-top: 10px;
-  margin-bottom: 5px;
+  
   font-weight: bold;
   color: #555;
 }
@@ -212,3 +249,49 @@ gap: 1rem;
   font-size: 13px;
 }
  
+  .single-cat{
+  border-radius: 50%;
+     
+  }
+ 
+  .action-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.icon-link,
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.icon-link {
+  background: rgba(85, 85, 85, 0.9);
+  color: #fff;
+}
+
+.icon-link:hover {
+  background: rgba(110, 110, 110, 0.95);
+  transform: translateY(-3px);
+}
+
+.delete-btn {
+  background: #c42b2b;
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background: #e01e1e;
+  transform: translateY(-3px);
+}
