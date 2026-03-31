@@ -25,7 +25,7 @@ const validateCategory = [
 
     const tools = await toolDb.getToolsByCategoryId(categoryId);
     
-    res.render("singleCategory", { category: category , tools: tools});
+    res.render("singleCategory", { category: category , tools: tools, errorMsg: null });
     
     
    
@@ -59,6 +59,15 @@ const createCategoryPost = [
 
 async function deleteCategory(req, res) {
     const categoryId = req.params.id;
+const tools = await toolDb.getToolsByCategoryId(categoryId);
+  if (tools.length > 0) {
+    return res.status(400).render("singleCategory", {
+      category: await db.getCategory({ id: categoryId }),
+      tools,
+      errorMsg: "Cannot delete category because it has tools assigned."
+    });
+  }
+
     await db.deleteCategory(categoryId);
     res.redirect("/categories");
 }

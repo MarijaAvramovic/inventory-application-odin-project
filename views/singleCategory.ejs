@@ -12,6 +12,11 @@
 
     <div class="centered-card">
   <div class="card-content">
+    <div>
+    <% if (errorMsg) { %>
+      <p style="color: #500e0e; margin-top: 5px; font-size: 1rem;"><%= errorMsg %></p>
+    <% } %>
+      </div>
    <h1><%= category.name %></h1>
     
 

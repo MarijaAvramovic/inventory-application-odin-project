@@ -18,7 +18,8 @@ Set up the routes and controllers.
 
 Create all of the ‘READ’ views (i.e. view category, and view item).
 Create all the forms and build out the controllers you need for the create and update actions.
-Figure out the delete functionality. What happens if you try to delete a category with items in it? Should it delete all the items as well? Should it just remove the category from the items? Or something else? This specific behavior will depend on your app’s requirements. *** deleet catego
+The delete functionality for item is easy. For categories only available if no tools assigned.  
+
 Add dummy data via a script to your local database. Do this again when you deploy.*****
 Deploy it and show off what you’ve done! ****
  

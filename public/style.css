@@ -55,6 +55,14 @@
     .category {
       background: #333;
     }
+    .category button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #555;
+      color: #e01e1e;
+      text-decoration: none;
+      border-radius: 4px;
+    }
     .tool {
       background: #444;
     }
@@ -130,13 +138,13 @@ gap: 1rem;
 .addNew a {
       display: inline-block;
       padding: 10px 20px;
-      background: #973636;
+      background: #559736;
       color: #fff;
       text-decoration: none;
       border-radius: 4px;
     }
 .addNew a:hover {
-      background: #c0392b;
+      background: #76c02b;
     }
 
     .tool-form-card {
@@ -203,3 +211,4 @@ gap: 1rem;
   margin-top: 5px;
   font-size: 13px;
 }
+ 

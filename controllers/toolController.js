@@ -94,7 +94,7 @@ const updateToolPost = [
       parseInt(data.category)
     );
 
-    res.redirect("/tools");
+    res.redirect("/tools/" + toolId);
   },
 ];
 
