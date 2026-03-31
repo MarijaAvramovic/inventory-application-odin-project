@@ -19,6 +19,9 @@ const toolDb = require("../db/toolQueries");
    
 } 
 
+function showAddCategoryForm(req, res) {
+    res.render("addCategory");
+}
 
 
 async function deleteCategory(req, res) {
@@ -31,7 +34,8 @@ async function deleteCategory(req, res) {
 module.exports = {
 
   getCategory,
-  deleteCategory
+  deleteCategory,
+    showAddCategoryForm
 };
    
  

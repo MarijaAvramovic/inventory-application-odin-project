@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('head') %>
+</head>
+<body>
+
+ <%- include('nav') %>
+
+  <main>
+    <div class="tool-form-card">
+  <h1>Add New Tool</h1>
+
+  <form action="/tools" method="POST">
+    
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" placeholder="Enter tool name" required>
+
+    <label for="url">URL</label>
+    <input type="url" id="url" name="url" placeholder="https://example.com">
+
+    <label for="category">Category</label>
+    <select name="category" id="category">
+      <option value="">Select a category</option>
+      <option value="Frontend">Frontend</option>
+      <option value="Backend">Backend</option>
+      <option value="Fullstack">Fullstack</option>
+    </select>
+
+    <button type="submit">Add Tool</button>
+  </form>
+</div>
+  </main>
+
+
+  
+  <footer>
+     <%- include('footer') %>
+  </footer>
+
+</body>
+</html>

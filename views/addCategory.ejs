@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('head') %>
+</head>
+<body>
+
+ <%- include('nav') %>
+
+  <main>
+ <div class="tool-form-card">
+   <h1>Add New Category</h1>
+    <form action="/categories" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <button type="submit">Add Category</button>
+    </form>
+    </div>
+  </main>
+
+
+  
+  <footer>
+     <%- include('footer') %>
+  </footer>
+
+</body>
+</html>

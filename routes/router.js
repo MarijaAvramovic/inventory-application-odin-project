@@ -7,23 +7,17 @@ const toolController = require("../controllers/toolController");
 
 router.get("/", controllers.getAll);
 router.get("/categories", controllers.getAllCategories);
+router.get("/categories/new", categoryController.showAddCategoryForm);
 router.get("/categories/:id", categoryController.getCategory);
-
  
 
 router.get("/tools", controllers.getAllTools);
+router.get("/tools/new", toolController.showAddToolForm);
 router.get("/tools/:id", toolController.getTool);
-
-
-router.get("/addCategory", (req, res) => {
-  res.send("addCategory");
-});
-
  
 
-router.get("/addTool", (req, res) => {
-  res.send("addTool");
-});
+ 
+ 
 
 router.post("/addCategory", (req, res) => {
   const { name } = req.body;

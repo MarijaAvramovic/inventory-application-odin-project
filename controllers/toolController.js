@@ -16,6 +16,10 @@
    
 } 
 
+function showAddToolForm(req, res) {
+    res.render("addTool");
+}
+
 async function deleteTool(req, res) {
     const toolId = req.params.id;
     await db.deleteTool(toolId);
@@ -24,5 +28,6 @@ async function deleteTool(req, res) {
 module.exports = {
 
   getTool,
-  deleteTool
+  deleteTool,
+  showAddToolForm
 };

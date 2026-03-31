@@ -27,6 +27,10 @@ async function getToolsByCategoryId(categoryId) {
     return results.rows;
 }
 
+function showAddToolForm(req, res) {
+    res.render("addTool");
+}
+
 
 async function deleteTool(id) {
     const query = "DELETE FROM tools WHERE id = $1";
@@ -36,5 +40,6 @@ async function deleteTool(id) {
 module.exports = {
     getTool,
     getToolsByCategoryId,
-    deleteTool
+    deleteTool, 
+    showAddToolForm
 };

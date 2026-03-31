@@ -131,3 +131,62 @@ gap: 1rem;
 .addNew a:hover {
       background: #c0392b;
     }
+
+    .tool-form-card {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  width: 350px;
+  margin: 0 auto; /* center inside your main */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.tool-form-card h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.tool-form-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.tool-form-card label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.tool-form-card input,
+.tool-form-card select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.tool-form-card input:focus,
+.tool-form-card select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 5px rgba(102, 126, 234, 0.4);
+}
+
+.tool-form-card button {
+  margin-top: 20px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #667eea;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.tool-form-card button:hover {
+  background: #5a67d8;
+}
