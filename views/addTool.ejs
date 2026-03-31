@@ -10,7 +10,13 @@
   <main>
     <div class="tool-form-card">
   <h1>Add New Tool</h1>
-
+  <% if (errors && errors.length > 0) { %>
+  <ul class="error">
+    <% errors.forEach(error => { %>
+      <li><%= error.msg %></li>
+    <% }) %>
+  </ul>
+<% } %>
   <form action="/tools/new" method="POST">
     
     <label for="name">Name</label>
@@ -20,12 +26,12 @@
     <input type="url" id="url" name="url" placeholder="https://example.com">
 
     <label for="category">Category</label>
-    <select name="category" id="category">
-      <option value="">Select a category</option>
-      <option value="Frontend">Frontend</option>
-      <option value="Backend">Backend</option>
-      <option value="Fullstack">Fullstack</option>
-    </select>
+   <select name="category" id="category">
+  <option value="">Select a category</option>
+  <% categories.forEach(cat => { %>
+    <option value="<%= cat.id %>"><%= cat.name %></option>
+  <% }) %>
+</select>
 
     <button type="submit">Add Tool</button>
   </form>

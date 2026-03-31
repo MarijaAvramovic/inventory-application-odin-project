@@ -65,9 +65,16 @@
       text-align: center;
       margin-top: 80px;
     }
-
+  footer a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 4px;
+    }
+    footer a:hover {
+        background-color: #634343;
+    }
     .centered-card {
- 
     display: flex;
     align-items: center;
     justify-content: center;

@@ -14,21 +14,13 @@ router.get("/categories/:id", categoryController.getCategory);
 
 router.get("/tools", controllers.getAllTools);
 router.get("/tools/new", toolController.showAddToolForm);
+router.post("/tools/new", toolController.createToolPost);
 router.get("/tools/:id", toolController.getTool);
  
 
  
  
-
-router.post("/addCategory", (req, res) => {
-  const { name } = req.body;
-  res.send(`Category added: ${name}`);
-});
-
-router.post("/addTool", (req, res) => {
-  const { name, category } = req.body;
-  res.send(`Tool added: ${name} in category ${category}`);
-});
+ 
 
 router.get("/editCategory/:id", (req, res) => {
   const categoryId = req.params.id;

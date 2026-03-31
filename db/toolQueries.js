@@ -31,6 +31,10 @@ function showAddToolForm(req, res) {
     res.render("addTool");
 }
 
+async function createTool(data) {
+    const query = "INSERT INTO tools (name, ahref, category_id) VALUES ($1, $2, $3)";
+    await pool.query(query, [data.name, data.url, data.category_id]);
+}
 
 async function deleteTool(id) {
     const query = "DELETE FROM tools WHERE id = $1";
@@ -41,5 +45,6 @@ module.exports = {
     getTool,
     getToolsByCategoryId,
     deleteTool, 
-    showAddToolForm
+    showAddToolForm,
+    createTool
 };
