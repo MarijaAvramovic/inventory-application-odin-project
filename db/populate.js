@@ -40,7 +40,7 @@ VALUES
 async function main() {
   console.log("seeding...");
   const client = new Client({
-    connectionString:  "postgresql://marijaavramovic@localhost:5432/top_inventory_app"
+    connectionString:  "postgresql://neondb_owner:npg_msnth9IMJ6vL@ep-fragrant-union-amjjfpip-pooler.c-5.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
   });
   await client.connect();
   await client.query(SQLCategories);
