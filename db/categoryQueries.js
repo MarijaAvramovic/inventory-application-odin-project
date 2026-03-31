@@ -6,6 +6,14 @@ async function getCategory(params) {
     return results.rows[0];
 }
 
+
+
+async function deleteCategory(id) {
+    const query = "DELETE FROM categories WHERE id = $1";
+    await pool.query(query, [id]);
+}
+
 module.exports = {
-    getCategory
+    getCategory,
+    deleteCategory
 };

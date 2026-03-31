@@ -14,8 +14,13 @@
     
     nav a {
       color: #fff;
-      margin: 0 15px;
+        border-radius: 4px;
       text-decoration: none;
+      padding: 10px 16px;
+    }
+    nav a:hover {
+      
+        background-color: #634343;
     }
     
     main {
@@ -108,3 +113,21 @@
     color: #ddd;
     line-height: 1.6;
   }
+
+  .addNew {
+    display: flex;
+     align-items: center;
+    justify-content: center;
+gap: 1rem;
+        }
+.addNew a {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #973636;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+.addNew a:hover {
+      background: #c0392b;
+    }

@@ -15,10 +15,14 @@
     
    
 } 
- 
 
+async function deleteTool(req, res) {
+    const toolId = req.params.id;
+    await db.deleteTool(toolId);
+    res.redirect("/tools");
+}
 module.exports = {
 
   getTool,
-   
+  deleteTool
 };
