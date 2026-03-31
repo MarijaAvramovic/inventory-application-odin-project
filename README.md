@@ -2,6 +2,8 @@
 
 Live Demo: https://inventory-application-odin-project.onrender.com/
 
+![inventory-app](./public/Screenshot%202026-03-30%20at%2011.50.53%20PM.pngpublic)
+
 
 
 #  odin-steps
