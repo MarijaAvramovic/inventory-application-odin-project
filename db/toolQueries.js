@@ -41,10 +41,16 @@ async function deleteTool(id) {
     await pool.query(query, [id]);
 }
 
+async function updateTool(id, name, url, categoryId) {
+    const query = "UPDATE tools SET name = $1, ahref = $2, category_id = $3 WHERE id = $4";
+    await pool.query(query, [name, url, categoryId, id]);
+}
+
 module.exports = {
     getTool,
     getToolsByCategoryId,
     deleteTool, 
     showAddToolForm,
-    createTool
+    createTool,
+    updateTool
 };

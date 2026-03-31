@@ -66,6 +66,47 @@ const createToolPost = [
   },
 ];
 
+
+const updateToolPost = [
+  validateTool,
+  async (req, res) => {
+    const errors = validationResult(req);
+    const toolId = req.params.id;
+
+    const categories = await dbCategory.getAllCategories();
+    const tool = await db.getTool(toolId);
+
+    if (!errors.isEmpty()) {
+      return res.status(400).render("updateTool", {
+        errors: errors.array(),
+        categories,
+        tool,
+        oldInput: req.body, // preserve input
+      });
+    }
+
+    const data = matchedData(req, { locations: ["body"] });
+
+    await db.updateTool(
+      parseInt(toolId),
+      data.name,
+      data.url,
+      parseInt(data.category)
+    );
+
+    res.redirect("/tools");
+  },
+];
+
+async function deleteTool(req, res) {
+    const toolId = req.params.id;               
+ 
+    await db.deleteTool(toolId);
+
+    res.redirect("/tools");
+}
+ 
+
 async function deleteTool(req, res) {
     const toolId = req.params.id;
     await db.deleteTool(toolId);
@@ -77,15 +118,18 @@ async function showUpdateToolForm(req, res) {
     const toolId = req.params.id;
     const tool = await db.getTool(toolId);
     const categories = await dbCategory.getAllCategories();
-    res.render("updateTool", { tool: tool, categories: categories, errors: [] });
+    res.render("updateTool", { tool: tool, categories: categories, errors: [],   oldInput: {} });
 }
 
 
+ 
 module.exports = {
 
   getTool,
   deleteTool,
   showAddToolForm,
     createToolPost,
-    showUpdateToolForm
+    showUpdateToolForm,
+    updateToolPost
+ 
 };

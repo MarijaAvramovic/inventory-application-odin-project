@@ -19,6 +19,7 @@ router.get("/tools/:id", toolController.getTool);
  
 
  router.get("/tools/update/:id", toolController.showUpdateToolForm);
+ router.post("/tools/update/:id", toolController.updateToolPost);
  
  
  
